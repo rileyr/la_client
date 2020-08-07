@@ -123,8 +123,6 @@ func (c *Client) CreateAcceptance(docSlug, versionSlug, externalID string, data 
 		return acc, err
 	}
 
-	v, _ := ioutil.ReadAll(resp.Body)
-	fmt.Println(string(v))
 	err = json.NewDecoder(resp.Body).Decode(&acc)
 	return acc, err
 }
